@@ -30,13 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	const ej01 = (str = 'origin') => str.split('').map(char => (['a', 'e', 'i', 'o', 'u'].includes(char) ? '1' : char)).join('')
-	const ej02 = num => {
-		const nums = []
-		for (let i = num; i <= 10; i++) {
-			nums.push(i)
-		}
-		return nums
-	}
+	const ej02 = (num, limit = 10) => Array.from(Array((limit + 1) - num).keys()).map(n => n + num)
 	const ej03 = (arr = [10, '20', 30, '40', 50]) => arr.map(el => typeof el === 'string' ? Number(el) : el)
 	const ej04 = (arr = [2, 4, 7, 1, 2, 'foo', 7, 'bar', 'qux', 3, 'foo']) => [...new Set(arr)]
 
